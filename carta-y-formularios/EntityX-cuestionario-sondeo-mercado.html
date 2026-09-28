@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EntityX — Cuestionario de sondeo de mercado</title>
+    <style>
+      :root {
+        --ink: #12242b;
+        --muted: #5b7177;
+        --line: #cfe0e1;
+        --teal: #00a993;
+        --soft: #f2fafa;
+        --dark: #062126;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      @page {
+        size: A4;
+        margin: 15mm 15mm 16mm;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #fff;
+        font:
+          12pt/1.5 Arial,
+          Helvetica,
+          sans-serif;
+      }
+      main {
+        max-width: 180mm;
+        margin: 0 auto;
+      }
+      header {
+        padding: 0 0 14px;
+        border-bottom: 3px solid var(--teal);
+      }
+      .brand {
+        margin-bottom: 4px;
+      }
+      .brand img {
+        display: block;
+        width: 150px;
+        height: auto;
+      }
+      h1 {
+        margin: 5px 0 3px;
+        color: var(--dark);
+        font-size: 23pt;
+        line-height: 1.1;
+        letter-spacing: -0.035em;
+      }
+      .subtitle {
+        margin: 0;
+        color: var(--muted);
+        font-size: 11.5pt;
+      }
+      .intro {
+        margin: 16px 0 13px;
+        padding: 10px 12px;
+        border-left: 3px solid var(--teal);
+        background: var(--soft);
+      }
+      .intro p {
+        margin: 0;
+      }
+      .meta {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px 20px;
+        margin: 14px 0 22px;
+        font-size: 10.3pt;
+      }
+      .field {
+        border-bottom: 1px solid #82989b;
+        min-height: 54px;
+        padding: 2px 0 5px;
+      }
+      .field b {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 9.4pt;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      h2 {
+        margin: 0 0 8px;
+        color: var(--dark);
+        font-size: 12.5pt;
+      }
+      .guide {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 10.4pt;
+      }
+      .question {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin: 0 0 12px;
+        padding: 10px 12px 9px;
+        border: 1px solid var(--line);
+      }
+      .question-group {
+        margin: 22px 0 8px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--teal);
+        color: var(--dark);
+        font-size: 13pt;
+      }
+      .question strong {
+        color: var(--teal);
+        margin-right: 5px;
+      }
+      .question p {
+        display: inline;
+        margin: 0;
+        font-size: 10.5pt;
+        font-weight: 700;
+      }
+      .hint {
+        display: block;
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 10.3pt;
+        font-style: italic;
+      }
+      .notes {
+        margin-top: 8px;
+        min-height: 72px;
+        background: repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent 19px,
+          #d9e6e7 20px
+        );
+      }
+      .notes--plain {
+        background: none;
+      }
+      .q10 {
+        border: 2px solid var(--teal);
+        background: #f4fffc;
+      }
+      .q10 p {
+        color: #073f3a;
+      }
+      footer {
+        margin-top: 14px;
+        padding-top: 8px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 9.3pt;
+      }
+      @media screen {
+        body {
+          padding: 24px;
+          background: #eef4f4;
+        }
+        main {
+          padding: 15mm;
+          background: #fff;
+          box-shadow: 0 4px 20px #002d3017;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand">
+          <img src="solologo-removebg-preview (1).png" alt="Logo de EntityX" />
+        </div>
+        <h1>Cuestionario de sondeo de mercado</h1>
+        <p class="subtitle">
+          Entrevista para dueños, administradores y personal de atención de
+          negocios que trabajan con clientes frecuentes.
+        </p>
+      </header>
+
+      <div class="intro">
+        <p>
+          <strong>Objetivo:</strong> conocer cómo se maneja hoy el negocio, qué
+          problemas aparecen y qué podría ayudar. Esta conversación no busca
+          vender ni evaluar a nadie; busca escuchar experiencias reales. Pida
+          ejemplos y anote las palabras que use la persona.
+        </p>
+      </div>
+
+      <div class="meta">
+        <div class="field"><b>Entidad / negocio:</b></div>
+        <div class="field"><b>Fecha:</b></div>
+        <div class="field"><b>Persona entrevistada y cargo:</b></div>
+        <div class="field"><b>Entrevistador(a):</b></div>
+        <div class="field"><b>Rubro y cantidad aproximada de clientes:</b></div>
+        <div class="field"><b>Ciudad / sede:</b></div>
+      </div>
+
+      <h2>Preguntas sobre experiencias reales</h2>
+
+      <h3 class="question-group">Clientes, alumnos o miembros</h3>
+      <section class="question">
+        <strong>1.</strong>
+        <p>
+          Cuando registraron al último cliente, ¿qué información necesitaban
+          guardar?
+        </p>
+        <div class="notes"></div>
+      </section>
+      <section class="question">
+        <strong>2.</strong>
+        <p>
+          ¿Dónde anotaron los datos del último cliente, alumno o miembro que
+          registraron?
+        </p>
+        <div class="notes"></div>
+      </section>
+      <section class="question">
+        <strong>3.</strong>
+        <p>
+          Cuando necesitaron comunicarse con un cliente, ¿dónde buscaron su
+          número de teléfono?
+        </p>
+        <div class="notes"></div>
+      </section>
+
+      <h3 class="question-group">Membresías o planes</h3>
+      <section class="question">
+        <strong>4.</strong>
+        <p>
+          Cuando revisaron las membresías o planes del negocio, ¿dónde guardaban
+          esa información?
+        </p>
+        <div class="notes"></div>
+      </section>
+      <section class="question">
+        <strong>5.</strong>
+        <p>
+          Cuando necesitaron saber qué membresía tenía un usuario, ¿cómo lo
+          verificaron?
+        </p>
+        <div class="notes"></div>
+      </section>
+
+      <h3 class="question-group">Pagos de membresías o servicios</h3>
+      <section class="question">
+        <strong>6.</strong>
+        <p>
+          Cuando un cliente consultó si estaba al día con su pago, ¿cómo lo
+          comprobaron?
+        </p>
+        <div class="notes"></div>
+      </section>
+      <section class="question">
+        <strong>7.</strong>
+        <p>
+          Piense en el último cobro que tuvo un monto o dato incorrecto: ¿cómo
+          corrigieron el error?
+        </p>
+        <div class="notes"></div>
+      </section>
+      <section class="question">
+        <strong>8.</strong>
+        <p>¿Cómo detectaron la cuota vencida más reciente de un cliente?</p>
+        <div class="notes"></div>
+      </section>
+      <br />
+      <br />
+
+      <h3 class="question-group">Ventas e ingresos</h3>
+      <section class="question">
+        <strong>9.</strong>
+        <p>
+          En la venta más reciente de un producto o servicio, ¿dónde y cómo
+          registraron la información?
+        </p>
+        <div class="notes"></div>
+      </section>
+      <section class="question">
+        <strong>10.</strong>
+        <p>
+          Cuando necesitaron saber cuánto vendió el negocio en determinadas
+          fechas, por ejemplo de enero a junio, ¿cómo consultaron esa
+          información?
+        </p>
+        <div class="notes"></div>
+      </section>
+
+      <h3 class="question-group">Comunicación con los clientes</h3>
+      <section class="question">
+        <strong>11.</strong>
+        <p>
+          ¿Cómo informaron por última vez a los clientes sobre una promoción,
+          actividad, clase o novedad del negocio?
+        </p>
+        <div class="notes"></div>
+      </section>
+      <section class="question">
+        <strong>12.</strong>
+        <p>
+          ¿Por qué medios consultan los clientes información sobre clases,
+          actividades adicionales o promociones?
+        </p>
+        <div class="notes"></div>
+      </section>
+
+      <h3 class="question-group">Recursos humanos</h3>
+      <section class="question">
+        <strong>13.</strong>
+        <p>¿Cómo registraron la asistencia del personal del negocio?</p>
+        <div class="notes"></div>
+      </section>
+      <section class="question">
+        <strong>14.</strong>
+        <p>¿Dónde registran los pagos que realiza el negocio al personal?</p>
+        <div class="notes"></div>
+      </section>
+
+      <h3 class="question-group">Información y control</h3>
+      <section class="question">
+        <strong>15.</strong>
+        <p>
+          Cuando no encuentran la información que necesitan, ¿qué problema les
+          genera?
+        </p>
+        <div class="notes"></div>
+      </section>
+      <footer>
+        EntityX · Instrumento de validación de mercado · Uso interno del equipo
+        de investigación.
+      </footer>
+    </main>
+  </body>
+</html>

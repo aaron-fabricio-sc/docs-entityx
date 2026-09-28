@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EntityX — Carta de presentación para sondeo de mercado</title>
+  <style>
+    :root { --ink:#000000; --muted:#000000; --line:#cfe0e1; --teal:#00a993; --soft:#f2fafa; --dark:#000000; }
+    * { box-sizing: border-box; }
+    @page { size: A4; margin: 22mm 20mm; }
+    body { margin:0; color:var(--ink); background:#fff; font: 12pt/1.62 Arial, Helvetica, sans-serif; }
+    main { max-width: 170mm; margin:0 auto; }
+    header { display:flex; align-items:end; justify-content:space-between; gap:20px; padding-bottom:15px; border-bottom:3px solid var(--teal); }
+    .brand img { display:block; width:158px; height:auto; }
+    .document-type { margin:0; color:var(--muted); font-size:9.5pt; font-weight:700; letter-spacing:.08em; text-align:right; text-transform:uppercase; }
+    h1 { margin:25px 0 18px; color:var(--dark); font-size:24pt; line-height:1.12; letter-spacing:-.035em; }
+    p { margin:0 0 15px; }
+    .purpose { margin:20px 0; padding:15px 17px; border-left:4px solid var(--teal); background:var(--soft); }
+    .purpose strong { color:#000; }
+    .thanks { margin-top:22px; font-weight:700; color:var(--dark); }
+    .contact { break-inside:avoid; page-break-inside:avoid; margin-top:33px; padding:17px 19px 18px; border:1px solid var(--line); background:#fff; }
+    .contact h2 { margin:0 0 6px; color:var(--dark); font-size:13pt; }
+    .contact p { margin:0 0 13px; color:var(--muted); font-size:10.5pt; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .field { min-height:45px; padding-top:2px; border-bottom:1px solid #82989b; }
+    .field b { display:block; margin-bottom:8px; color:var(--muted); font-size:9.5pt; letter-spacing:.04em; text-transform:uppercase; }
+    footer { margin-top:25px; padding-top:10px; border-top:1px solid var(--line); color:var(--muted); font-size:9.3pt; }
+    @media screen { body { padding:24px; background:#eef4f4; } main { padding:22mm 20mm; background:#fff; box-shadow:0 4px 20px #002d3017; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand"><img src="solologo-removebg-preview (1).png" alt="Logo de EntityX" /></div>
+      <p class="document-type">Carta de presentación</p>
+    </header>
+
+    <h1>Estudio de mercado para conocer la gestión diaria de los negocios</h1>
+
+    <p>Estimada(o) propietaria(o), administradora(or) o integrante del equipo:</p>
+
+    <p>Reciba un cordial saludo de parte de EntityX. Estamos realizando un estudio de mercado con negocios que atienden clientes de manera frecuente, como centros deportivos, academias, clubes, centros de bienestar y otros rubros similares.</p>
+
+    <div class="purpose">
+      <strong>¿Para qué realizamos esta entrevista?</strong><br />
+      Queremos comprender cómo se manejan actualmente los clientes, los pagos, las ventas y la información del negocio; también buscamos conocer las dificultades que aparecen en el trabajo diario.
+    </div>
+
+    <p>La entrevista consiste en una conversación breve sobre experiencias reales de su negocio. No es una venta, no implica ningún costo y no requiere que pruebe o instale un producto. Sus respuestas nos ayudarán a entender mejor las necesidades del mercado y a desarrollar soluciones más útiles en el futuro.</p>
+
+    <p>Agradecemos sinceramente el tiempo y la experiencia que decida compartir con nosotros.</p>
+
+    <p class="thanks">Muchas gracias por su colaboración.</p>
+
+    <section class="contact">
+      <h2>Contacto de la persona entrevistadora</h2>
+      <p>Si desea solicitar más información sobre este estudio, puede comunicarse con:</p>
+      <div class="contact-grid">
+        <div class="field"><b>Nombre:</b></div>
+        <div class="field"><b>Celular:</b></div>
+      </div>
+    </section>
+
+    <footer>EntityX · Estudio de mercado · Documento de presentación para personas entrevistadas.</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EntityX — Mapa estratégico de rubros potenciales</title>
+  <style>
+    :root { --ink:#12242b; --muted:#587076; --line:#cfdfdf; --teal:#00a993; --soft:#eff9f8; --dark:#062126; --gold:#e6ac3d; }
+    * { box-sizing:border-box; }
+    @page { size:A4; margin:15mm 14mm 17mm; }
+    body { margin:0; color:var(--ink); font:10.8pt/1.52 Arial, Helvetica, sans-serif; background:#fff; }
+    main { max-width:182mm; margin:auto; }
+    header { min-height:260mm; padding:13mm 14mm; color:#fff; background:linear-gradient(130deg, rgba(4,25,30,.97), rgba(3,101,97,.88)); page-break-after:always; display:flex; flex-direction:column; justify-content:space-between; }
+    .brand img { display:block; width:165px; height:auto; filter:drop-shadow(0 2px 7px #0008); }
+    .eyebrow { margin:0 0 10px; color:#98eee2; font-size:9pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { max-width:650px; margin:0; color:#fff; font-size:31pt; line-height:1.02; letter-spacing:-.045em; }
+    .lead { max-width:625px; margin:16px 0 0; color:#d3e9e7; font-size:13pt; line-height:1.55; }
+    .cover-meta { margin-top:20px; padding-top:10px; border-top:1px solid #b1e6df66; color:#bee0dc; font-size:9.2pt; }
+    .content { padding:15mm 0 0; }
+    section { margin:0 0 19px; break-inside:avoid; page-break-inside:avoid; }
+    h2 { margin:0 0 8px; padding-bottom:6px; border-bottom:2px solid var(--teal); color:var(--dark); font-size:20pt; line-height:1.12; letter-spacing:-.03em; }
+    h3 { margin:15px 0 7px; color:#087b6d; font-size:13.5pt; }
+    p { margin:0 0 9px; }
+    .intro { font-size:11.5pt; color:#314d52; }
+    .note { margin-top:12px; padding:11px 13px; border-left:4px solid var(--teal); background:var(--soft); color:#28545a; }
+    table { width:100%; margin-top:9px; border-collapse:collapse; font-size:9.4pt; break-inside:auto; }
+    thead { display:table-header-group; }
+    tr { break-inside:avoid; page-break-inside:avoid; }
+    th { padding:7px 8px; background:var(--dark); color:#fff; text-align:left; font-size:8.5pt; letter-spacing:.035em; text-transform:uppercase; }
+    td { padding:7px 8px; border:1px solid var(--line); vertical-align:top; }
+    tbody tr:nth-child(even) td { background:#f7fbfb; }
+    .criteria { display:grid; grid-template-columns:repeat(5,1fr); gap:7px; margin-top:10px; }
+    .criterion { min-height:106px; padding:10px; border:1px solid var(--line); background:#fff; }
+    .criterion strong { display:block; color:var(--dark); font-size:15pt; }
+    .criterion b { display:block; margin:2px 0 4px; color:#087b6d; font-size:9.4pt; }
+    .criterion span { color:var(--muted); font-size:8.6pt; line-height:1.35; }
+    .phase { display:grid; grid-template-columns:92px 1fr; gap:13px; margin:0 0 9px; padding:11px; border:1px solid var(--line); background:#fff; }
+    .phase strong { color:#087b6d; font-size:15pt; }
+    .phase p { margin:0; }
+    .check-list { margin:7px 0 0; padding-left:19px; }
+    .check-list li { margin:0 0 4px; }
+    footer { margin-top:22px; padding:9px 0 14px; border-top:1px solid var(--line); color:var(--muted); font-size:8.8pt; }
+    @media screen { body { padding:24px; background:#edf4f4; } main { background:#fff; box-shadow:0 5px 24px #002d3020; } .content { padding-left:14mm; padding-right:14mm; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand"><img src="solologo-removebg-preview (1).png" alt="Logo de EntityX" /></div>
+      <div>
+        <p class="eyebrow">Documento estratégico</p>
+        <h1>Mapa de rubros potenciales</h1>
+        <p class="lead">Una guía para priorizar los negocios a los que EntityX puede adaptarse, según la cercanía con su núcleo actual y el desarrollo adicional requerido.</p>
+      </div>
+      <div class="cover-meta">EntityX · Gestión de clientes, pagos, ventas, personal, asistencia y operación diaria.</div>
+    </header>
+
+    <div class="content">
+      <section>
+        <h2>1. Cómo leer este mapa</h2>
+        <p class="intro">EntityX encaja mejor en negocios que trabajan con clientes o miembros registrados, cobran pagos periódicos y cuentan con personal que necesita registrar la operación diaria.</p>
+        <p class="note"><strong>Alcance actual:</strong> este mapa no promete funciones por rubro. EntityX parte de la gestión de clientes o miembros, membresías, pagos, ventas, personal, asistencia y reportes. Toda función adicional debe validarse y desarrollarse antes de ofrecerla.</p>
+        <div class="criteria">
+          <div class="criterion"><strong>A</strong><b>85–100%</b><span>Usa el núcleo actual con pequeños cambios de lenguaje o configuración.</span></div>
+          <div class="criterion"><strong>B</strong><b>65–84%</b><span>Requiere horarios, cupos, paquetes, sesiones o reservas simples.</span></div>
+          <div class="criterion"><strong>C</strong><b>45–64%</b><span>Necesita una vertical o modelo de datos propio antes de venderse ampliamente.</span></div>
+          <div class="criterion"><strong>D</strong><b>25–44%</b><span>Comparte procesos, pero requiere cambios importantes de producto.</span></div>
+          <div class="criterion"><strong>E</strong><b>Menos de 25%</b><span>No es conveniente con el producto actual; sería otro tipo de sistema.</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. Nivel A — Prioridad máxima</h2>
+        <p>Son los mercados más cercanos a EntityX porque comparten clientes o alumnos registrados, cobros recurrentes, ventas y personal.</p>
+        <table>
+          <thead><tr><th>Rubro</th><th>Ejemplos</th><th>Procesos que comparte con el núcleo actual</th></tr></thead>
+          <tbody>
+            <tr><td>Gimnasios</td><td>Gimnasios de barrio, cadenas, box de entrenamiento</td><td>Miembros, membresías, pagos, ventas, personal y reportes.</td></tr>
+            <tr><td>Centros fitness</td><td>CrossFit, funcional, calistenia, spinning</td><td>Miembros, pagos, ventas, personal y asistencia.</td></tr>
+            <tr><td>Estudios de bienestar físico</td><td>Yoga, pilates, zumba, aerobics</td><td>Clientes, pagos, personal y asistencia.</td></tr>
+            <tr><td>Academias deportivas</td><td>Fútbol, futsal, básquet, vóley, tenis</td><td>Alumnos, mensualidades, personal y asistencia.</td></tr>
+            <tr><td>Escuelas de natación</td><td>Natación infantil o para adultos</td><td>Alumnos, pagos, personal y asistencia.</td></tr>
+            <tr><td>Artes marciales</td><td>Karate, taekwondo, judo, jiu-jitsu, boxeo</td><td>Miembros, pagos, personal y asistencia.</td></tr>
+            <tr><td>Escuelas de danza</td><td>Ballet, danza urbana, folclore, baile social</td><td>Alumnos, mensualidades, personal y asistencia.</td></tr>
+            <tr><td>Academias de música</td><td>Instrumentos, canto, coros</td><td>Alumnos, cuotas, personal y asistencia.</td></tr>
+            <tr><td>Academias de idiomas</td><td>Inglés, portugués, lenguas originarias</td><td>Alumnos, cuotas, personal y asistencia.</td></tr>
+            <tr><td>Refuerzo escolar</td><td>Tutorías, nivelación, apoyo académico</td><td>Alumnos, pagos, personal y asistencia.</td></tr>
+            <tr><td>Institutos de formación corta</td><td>Computación, diseño, oficios, cursos técnicos</td><td>Alumnos, pagos, personal y asistencia.</td></tr>
+            <tr><td>Talleres artísticos</td><td>Pintura, teatro, fotografía, cerámica</td><td>Alumnos, pagos, personal y asistencia.</td></tr>
+            <tr><td>Clubes deportivos</td><td>Tenis, pádel, squash, ciclismo</td><td>Socios, cuotas, ventas, personal y reportes.</td></tr>
+            <tr><td>Clubes sociales pequeños</td><td>Clubes barriales o privados</td><td>Socios, pagos, personal y reportes.</td></tr>
+            <tr><td>Centros recreativos con membresía</td><td>Centros familiares, recreación privada</td><td>Miembros, pagos, ventas, personal y reportes.</td></tr>
+          </tbody>
+        </table>
+        <p class="note"><strong>Enfoque comercial actual:</strong> “EntityX ayuda a ordenar clientes o miembros, cobros, ventas, personal y reportes desde un solo lugar”.</p>
+      </section>
+
+      <section>
+        <h2>3. Nivel B — Muy compatibles</h2>
+        <p>Son candidatos a futuro: comparten parte del núcleo de EntityX, pero no deben venderse como cubiertos hoy. Cada uno necesita validar y desarrollar funciones adicionales.</p>
+        <table>
+          <thead><tr><th>Rubro</th><th>Ejemplos</th><th>Ajuste principal</th></tr></thead>
+          <tbody>
+            <tr><td>Escuelas de conducción</td><td>Cursos de manejo y licencias</td><td>Horarios por instructor, vehículos y clases prácticas.</td></tr>
+            <tr><td>Preparación académica</td><td>Preuniversitarios, preparación de exámenes</td><td>Cursos, grupos, horarios y control de avance.</td></tr>
+            <tr><td>Capacitación empresarial</td><td>Cursos para empresas y público</td><td>Participantes, grupos, facturación y certificados.</td></tr>
+            <tr><td>Formación religiosa</td><td>Catequesis, institutos bíblicos, formación pastoral</td><td>Grupos, aportes, asistencia y comunicación.</td></tr>
+            <tr><td>Academias de juegos mentales</td><td>Ajedrez, robótica, programación infantil</td><td>Grupos, clases, torneos y mensualidades.</td></tr>
+            <tr><td>Academias de cocina</td><td>Cocina, repostería, barismo</td><td>Cursos, cupos, pagos, instructores e insumos básicos.</td></tr>
+            <tr><td>Academias de belleza</td><td>Maquillaje, uñas, peluquería, barbería</td><td>Cursos, alumnos, cuotas, horarios y ventas.</td></tr>
+            <tr><td>Centros de bienestar</td><td>Meditación, terapias alternativas, masajes por paquetes</td><td>Paquetes, reservas, personal y cobros.</td></tr>
+            <tr><td>Spas y salones con planes</td><td>Membresías de belleza, tratamientos recurrentes</td><td>Reservas, paquetes, ventas e inventario básico.</td></tr>
+            <tr><td>Centros de fisioterapia no clínica</td><td>Rehabilitación física privada, entrenamiento correctivo</td><td>Sesiones, paquetes, horarios y profesionales.</td></tr>
+            <tr><td>Estudios de tatuaje o piercing</td><td>Servicios por cita y anticipos</td><td>Reservas, anticipos, ventas y personal.</td></tr>
+            <tr><td>Canchas y complejos deportivos</td><td>Fútbol 5, pádel, tenis, ráquetbol</td><td>Reservas por horario, pagos, clientes y ventas.</td></tr>
+            <tr><td>Campamentos y escuelas de verano</td><td>Vacacionales, colonias, actividades de temporada</td><td>Inscripciones, grupos, asistencia y responsables.</td></tr>
+            <tr><td>Organizaciones juveniles</td><td>Scouts, grupos culturales, clubes juveniles</td><td>Miembros, cuotas, actividades y asistencia.</td></tr>
+            <tr><td>Bibliotecas privadas o clubes de lectura</td><td>Suscripciones, actividades y talleres</td><td>Socios, cuotas, préstamos y eventos.</td></tr>
+          </tbody>
+        </table>
+        <p class="note"><strong>Prioridad técnica:</strong> desarrollar horarios, cupos, reservas y paquetes de sesiones para ampliar esta categoría con seguridad.</p>
+      </section>
+
+      <section>
+        <h2>4. Nivel C — Viables como verticales</h2>
+        <p>Son rubros adaptables aproximadamente a un 50%, pero necesitan una versión especializada de EntityX antes de comercializarse de forma amplia.</p>
+        <table>
+          <thead><tr><th>Rubro</th><th>Por qué encaja</th><th>Qué faltaría</th></tr></thead>
+          <tbody>
+            <tr><td>Guarderías</td><td>Inscripciones, pagos, asistencia, personal y actividades.</td><td>Niño–tutor, autorizados para recoger, emergencias, salas, horarios y privacidad.</td></tr>
+            <tr><td>Preescolares</td><td>Matrícula, pagos, asistencia, docentes y comunicación.</td><td>Tutores, cursos/salas, reportes académicos y datos sensibles de menores.</td></tr>
+            <tr><td>Centros infantiles</td><td>Actividades, pagos, niños y personal.</td><td>Autorizaciones, grupos por edad, entradas/salidas y seguimiento diario.</td></tr>
+            <tr><td>Programas extracurriculares</td><td>Clases, cuotas, niños, horarios y asistencia.</td><td>Tutor responsable, recogida autorizada y grupos.</td></tr>
+            <tr><td>Educación especial</td><td>Sesiones, familias, personal y pagos.</td><td>Información sensible, seguimiento especializado y controles de privacidad.</td></tr>
+            <tr><td>Nutrición y bienestar profesional</td><td>Clientes, paquetes, pagos y profesionales.</td><td>Agenda, historial sensible y consentimiento informado.</td></tr>
+            <tr><td>Psicología y salud mental</td><td>Citas, pagos y profesionales.</td><td>Privacidad extrema, historia clínica y normativa aplicable.</td></tr>
+            <tr><td>Clínicas y centros médicos</td><td>Pacientes, pagos, personal y servicios.</td><td>Historia clínica, recetas, seguros, cumplimiento sanitario e integraciones.</td></tr>
+            <tr><td>Veterinarias con planes</td><td>Clientes, mascotas, vacunas, pagos y ventas.</td><td>Ficha de mascota, historial clínico, agenda e inventario.</td></tr>
+            <tr><td>Hoteles para mascotas</td><td>Paquetes, pagos, personal y asistencia.</td><td>Ficha de mascota, reservas, vacunas y servicios diarios.</td></tr>
+            <tr><td>Cuidado de adultos mayores</td><td>Cuotas, personal, asistencia y familias.</td><td>Datos de salud, responsables, turnos y registros de cuidado.</td></tr>
+            <tr><td>Colegios privados pequeños</td><td>Alumnos, pensiones, personal y asistencia.</td><td>Gestión académica, notas, tutores y normativa educativa.</td></tr>
+            <tr><td>Universidades e institutos grandes</td><td>Matrícula, pagos y asistencia.</td><td>Materias, notas, créditos, integraciones y procesos académicos complejos.</td></tr>
+          </tbody>
+        </table>
+        <p class="note"><strong>Guarderías:</strong> son una oportunidad real, pero el cliente que paga suele ser el padre o tutor y la persona atendida es el niño. Una futura versión podría llamarse <strong>EntityX Infantil</strong>.</p>
+      </section>
+
+      <section>
+        <h2>5. Nivel D — Posibles con desarrollo importante</h2>
+        <table>
+          <thead><tr><th>Rubro</th><th>Módulos que pasarían a ser centrales</th></tr></thead>
+          <tbody>
+            <tr><td>Coworkings y oficinas virtuales</td><td>Reservas de espacios, escritorios, salas, llaves/accesos y facturación por consumo.</td></tr>
+            <tr><td>Hostales, hoteles y alojamientos</td><td>Reservas, habitaciones, huéspedes, noches, tarifas variables y limpieza.</td></tr>
+            <tr><td>Salones de eventos</td><td>Cotizaciones, reservas, contratos, anticipos y proveedores.</td></tr>
+            <tr><td>Organizadores de eventos, ferias y exposiciones</td><td>Entradas, acreditación, asistentes, expositores, stands y agenda.</td></tr>
+            <tr><td>Ligas y torneos deportivos</td><td>Equipos, fixtures, resultados, árbitros e inscripciones.</td></tr>
+            <tr><td>Asociaciones profesionales</td><td>Afiliados, cuotas, certificados, elecciones y directorios.</td></tr>
+            <tr><td>Cooperativas</td><td>Socios, aportes, préstamos y cumplimiento normativo financiero.</td></tr>
+            <tr><td>Juntas vecinales y organizaciones comunitarias</td><td>Vecinos, cuotas, asambleas y proyectos.</td></tr>
+            <tr><td>Condominios</td><td>Propietarios, expensas, mantenimiento, visitantes y áreas comunes.</td></tr>
+            <tr><td>Iglesias y fundaciones</td><td>Miembros, donaciones, actividades, beneficiarios y voluntariado.</td></tr>
+            <tr><td>Empresas de seguridad</td><td>Guardias, turnos, contratos, asistencia y reportes operativos.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>6. Nivel E — No priorizar ahora</h2>
+        <p>Estos negocios no son imposibles, pero convertirían a EntityX en otro tipo de sistema. No conviene dirigir ventas hacia ellos en la etapa actual.</p>
+        <table>
+          <thead><tr><th>Rubro</th><th>Por qué no encaja hoy</th></tr></thead>
+          <tbody>
+            <tr><td>Tiendas minoristas tradicionales</td><td>Inventario, compras, proveedores, caja y POS son el núcleo.</td></tr>
+            <tr><td>Restaurantes y cafeterías</td><td>Comandas, mesas, recetas, cocina, delivery e inventario son indispensables.</td></tr>
+            <tr><td>Supermercados y farmacias</td><td>Inventario masivo, códigos de barra, compras y regulación.</td></tr>
+            <tr><td>Comercio electrónico puro</td><td>Catálogo, checkout, logística y marketplace son el centro del producto.</td></tr>
+            <tr><td>Empresas de transporte</td><td>Rutas, flota, conductores, boletaje y despacho.</td></tr>
+            <tr><td>Constructoras</td><td>Presupuestos, obra, materiales, contratistas y proyectos.</td></tr>
+            <tr><td>Estudios contables</td><td>Contabilidad tributaria y gestión documental especializada.</td></tr>
+            <tr><td>Bancos, financieras y crédito</td><td>Regulación financiera, riesgo, préstamos y auditoría.</td></tr>
+            <tr><td>Aseguradoras</td><td>Pólizas, siniestros, primas y regulación.</td></tr>
+            <tr><td>Hospitales y clínicas complejas</td><td>Historia clínica, emergencias, seguros, farmacia y regulación sanitaria.</td></tr>
+            <tr><td>Manufactura y distribución mayorista</td><td>Producción, almacenes, costos, compras, logística y planificación.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>7. Mercados que requieren precaución</h2>
+        <table>
+          <thead><tr><th>Mercado</th><th>Precaución principal</th></tr></thead>
+          <tbody>
+            <tr><td>Guarderías, colegios y centros infantiles</td><td>Datos de menores, autorizaciones y contactos de emergencia.</td></tr>
+            <tr><td>Salud, psicología y rehabilitación</td><td>Datos personales y de salud sensibles.</td></tr>
+            <tr><td>Condominios</td><td>Datos de residentes y visitantes.</td></tr>
+            <tr><td>Cooperativas y créditos</td><td>Datos financieros y obligaciones normativas.</td></tr>
+            <tr><td>Asociaciones profesionales</td><td>Datos personales, certificados y cuotas.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>8. Ruta recomendada de expansión</h2>
+        <div class="phase"><strong>Fase 1</strong><p><b>Validar el núcleo.</b> Gimnasios, centros fitness, academias deportivas, danza, artes marciales, música, idiomas y refuerzo escolar.</p></div>
+        <div class="phase"><strong>Fase 2</strong><p><b>Añadir operación por horario.</b> Yoga, pilates, spas, cursos con cupos, canchas, complejos deportivos, escuelas de conducción y talleres especializados.</p></div>
+        <div class="phase"><strong>Fase 3</strong><p><b>Crear verticales.</b> EntityX Infantil para guarderías y preescolares; EntityX Salud ligera para bienestar profesional; EntityX Espacios para coworkings y alquiler de salas.</p></div>
+        <div class="phase"><strong>Fase 4</strong><p><b>Evaluar con cuidado.</b> Educación formal, salud clínica, condominios, cooperativas y asociaciones, después de validar demanda y requisitos específicos.</p></div>
+      </section>
+
+      <section>
+        <h2>9. Regla para evaluar un nuevo rubro</h2>
+        <p>Antes de adaptar EntityX a un nuevo sector, revisar:</p>
+        <ol class="check-list">
+          <li>¿Tiene clientes, alumnos o miembros que vuelven periódicamente?</li>
+          <li>¿Cobra cuotas, membresías, paquetes o pagos recurrentes?</li>
+          <li>¿Necesita controlar asistencia, ingreso, sesiones o actividades?</li>
+          <li>¿Tiene personal con diferentes permisos?</li>
+          <li>¿Pierde tiempo o dinero por información dispersa?</li>
+          <li>¿Puede resolver su problema con el núcleo actual sin construir un sistema completamente distinto?</li>
+        </ol>
+        <p class="note">Si las primeras cinco respuestas son positivas y el cambio técnico es pequeño, el rubro es candidato de Nivel A o B. Si exige datos de menores, salud, inventario complejo, reservas avanzadas o regulación especial, debe tratarse como una vertical futura.</p>
+      </section>
+
+      <footer>EntityX · Documento de estrategia de mercado · Clasificación inicial para orientar validación y expansión.</footer>
+    </div>
+  </main>
+</body>
+</html>

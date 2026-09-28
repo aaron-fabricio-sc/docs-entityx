@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EntityX — Cuestionario de problemáticas de clientes</title>
+    <style>
+      :root { --ink: #12242b; --muted: #5b7177; --line: #cfe0e1; --teal: #00a993; --soft: #f2fafa; --dark: #062126; }
+      * { box-sizing: border-box; }
+      @page { size: A4; margin: 15mm 15mm 16mm; }
+      body { margin: 0; color: var(--ink); background: #fff; font: 12pt/1.5 Arial, Helvetica, sans-serif; }
+      main { max-width: 180mm; margin: 0 auto; }
+      header { padding: 0 0 14px; border-bottom: 3px solid var(--teal); }
+      .brand { margin-bottom: 4px; }
+      .brand img { display: block; width: 150px; height: auto; }
+      h1 { margin: 5px 0 3px; color: var(--dark); font-size: 23pt; line-height: 1.1; letter-spacing: -0.035em; }
+      .subtitle { margin: 0; color: var(--muted); font-size: 11.5pt; }
+      .intro { margin: 16px 0 13px; padding: 10px 12px; border-left: 3px solid var(--teal); background: var(--soft); }
+      .intro p { margin: 0; }
+      .meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 20px; margin: 14px 0 22px; font-size: 10.3pt; }
+      .field { border-bottom: 1px solid #82989b; min-height: 54px; padding: 2px 0 5px; }
+      .field b { display: block; margin-bottom: 8px; color: var(--muted); font-size: 9.4pt; text-transform: uppercase; letter-spacing: 0.04em; }
+      h2 { margin: 0 0 8px; color: var(--dark); font-size: 12.5pt; }
+      .guide { margin: 0 0 12px; color: var(--muted); font-size: 10.4pt; }
+      .question { break-inside: avoid; page-break-inside: avoid; margin: 0 0 12px; padding: 10px 12px 9px; border: 1px solid var(--line); }
+      .question-group { margin: 22px 0 8px; padding-bottom: 5px; border-bottom: 2px solid var(--teal); color: var(--dark); font-size: 13pt; }
+      .question strong { color: var(--teal); margin-right: 5px; }
+      .question p { display: inline; margin: 0; font-size: 10.5pt; font-weight: 700; }
+      .notes { margin-top: 8px; min-height: 44px; background: repeating-linear-gradient(to bottom, transparent 0, transparent 19px, #d9e6e7 20px); }
+      footer { margin-top: 14px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--muted); font-size: 9.3pt; }
+      @media screen { body { padding: 24px; background: #eef4f4; } main { padding: 15mm; background: #fff; box-shadow: 0 4px 20px #002d3017; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand"><img src="solologo-removebg-preview (1).png" alt="Logo de EntityX" /></div>
+        <h1>Cuestionario de problemáticas de clientes</h1>
+        <p class="subtitle">Entrevista para dueños, administradores y personal de atención de negocios que trabajan con clientes frecuentes.</p>
+      </header>
+      <div class="intro">
+        <p><strong>Objetivo:</strong> conocer situaciones reales que complican el día a día del negocio. Hablemos de casos recientes: qué pasó, cómo se resolvió y qué impacto tuvo.</p>
+      </div>
+      <div class="meta">
+        <div class="field"><b>Entidad / negocio:</b></div>
+        <div class="field"><b>Fecha:</b></div>
+        <div class="field"><b>Persona entrevistada y cargo:</b></div>
+        <div class="field"><b>Entrevistador(a):</b></div>
+        <div class="field"><b>Rubro y cantidad aproximada de clientes:</b></div>
+        <div class="field"><b>Ciudad / sede:</b></div>
+      </div>
+      <h2>Hablemos de su día a día</h2>
+      <p class="guide">Pida ejemplos reales y dé tiempo para que la persona cuente lo que pasó. En estas preguntas, “cliente” también puede ser alumno, socio o miembro, según el rubro.</p>
+
+      <h3 class="question-group">Cobros y entradas</h3>
+      <section class="question"><strong>1.</strong><p>Cuéntame de la última vez que un cliente dijo que ya había pagado, pero no encontraron el registro. ¿Cómo lo resolvieron?</p><div class="notes"></div></section>
+      <section class="question"><strong>2.</strong><p>¿Cuándo fue la última vez que la caja no coincidió con los cobros del día? ¿Cuánto tiempo les tomó encontrar la causa?</p><div class="notes"></div></section>
+      <section class="question"><strong>3.</strong><p>¿Cuándo fue la última vez que un cliente con un pago vencido recibió el servicio o pudo ingresar sin que se dieran cuenta? ¿Cómo lo manejaron?</p><div class="notes"></div></section>
+
+      <h3 class="question-group">Atención y comunicación</h3>
+      <section class="question"><strong>4.</strong><p>Cuéntame de la última vez que un cliente no se enteró de un horario, una reserva, una actividad o un cambio importante. ¿Cómo lo resolvieron?</p><div class="notes"></div></section>
+      <section class="question"><strong>5.</strong><p>¿Cuándo fue la última vez que un cliente canceló o faltó sin avisar? ¿Les hizo perder tiempo o dinero?</p><div class="notes"></div></section>
+      <section class="question"><strong>6.</strong><p>¿Qué consulta les repiten más los clientes durante el día? ¿Cuánto tiempo les quita responderla?</p><div class="notes"></div></section>
+
+      <h3 class="question-group">Ventas y equipo</h3>
+      <section class="question"><strong>7.</strong><p>Cuéntame de la última vez que una venta de producto o servicio no quedó registrada. ¿Cómo se dieron cuenta?</p><div class="notes"></div></section>
+      <section class="question"><strong>8.</strong><p>¿Cuándo fue la última vez que tuvieron una confusión con el horario, la asistencia o un pago del personal? ¿Cómo lo resolvieron?</p><div class="notes"></div></section>
+
+      <h3 class="question-group">Control del negocio</h3>
+      <section class="question"><strong>9.</strong><p>Cuéntame de la última vez que necesitaron un dato importante del negocio y no lo encontraron rápido. ¿Cómo lo resolvieron?</p><div class="notes"></div></section>
+
+      <h3 class="question-group">Posible solución</h3>
+      <section class="question"><strong>10.</strong><p>Si una herramienta sencilla les ayudara a evitar estos problemas, ¿estarían dispuestos a pagar una cuota mensual por usarla? ¿Qué problema tendría que resolver primero para que valga la pena?</p><div class="notes"></div></section>
+      <footer>EntityX · Instrumento de validación de mercado · Uso interno del equipo de investigación.</footer>
+    </main>
+  </body>
+</html>

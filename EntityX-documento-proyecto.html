@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>EntityX - Documento estratégico y técnico del proyecto</title>
+  <style>
+    :root {
+      --ink: #12202a;
+      --muted: #5f6f7a;
+      --line: #d8e5ea;
+      --soft: #eef7f8;
+      --panel: #f7fbfc;
+      --brand: #00c2a8;
+      --brand-2: #126c7a;
+      --accent: #f2b84b;
+      --dark: #06171d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      background: #ffffff;
+    }
+
+    @page {
+      size: A4;
+      margin: 16mm 14mm 17mm;
+    }
+
+    .cover {
+      min-height: 246mm;
+      padding: 18mm 16mm 10mm;
+      color: #ffffff;
+      background:
+        linear-gradient(135deg, rgba(6, 23, 29, 0.94), rgba(8, 68, 72, 0.9)),
+        url("landing-page-EntityX/public/imagenes/Colores_neon_y_EntityX_fondo_202607061004.jpeg") center / cover;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-row img {
+      width: 74px;
+      height: 74px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .cover h1 {
+      margin: 26mm 0 7mm;
+      max-width: 670px;
+      font-size: 42px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .cover .subtitle {
+      max-width: 620px;
+      font-size: 17px;
+      color: #d9f5f2;
+    }
+
+    .cover-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20mm;
+    }
+
+    .cover-card {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 12px;
+      min-height: 78px;
+    }
+
+    .cover-card strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    .cover-card span {
+      color: #d5e9ec;
+      font-size: 11.5px;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: #d5e9ec;
+      font-size: 11px;
+      border-top: 1px solid rgba(255,255,255,0.24);
+      padding-top: 12px;
+    }
+
+    main {
+      padding: 0;
+    }
+
+    section {
+      page-break-inside: avoid;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--brand);
+      color: var(--dark);
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 14px 0 7px;
+      color: var(--brand-2);
+      font-size: 17px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 8px;
+    }
+
+    ul {
+      margin: 6px 0 10px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 0 0 4px;
+    }
+
+    .lead {
+      font-size: 15.5px;
+      color: #263944;
+    }
+
+    .muted { color: var(--muted); }
+
+    .toc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 12px 0 18px;
+    }
+
+    .toc div,
+    .note,
+    .metric,
+    .module,
+    .vision-item {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 11px;
+    }
+
+    .toc strong {
+      display: block;
+      color: var(--brand-2);
+      margin-bottom: 3px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+    }
+
+    .problem-solution {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 12.7px;
+    }
+
+    .problem-solution th {
+      background: var(--dark);
+      color: #ffffff;
+      text-align: left;
+      padding: 8px;
+      font-size: 13px;
+    }
+
+    .problem-solution td {
+      border: 1px solid var(--line);
+      vertical-align: top;
+      padding: 7px 8px;
+    }
+
+    .problem-solution tr:nth-child(even) td {
+      background: #f8fbfb;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid rgba(0, 194, 168, 0.45);
+      background: #e8fbf7;
+      color: #075d55;
+      font-weight: 700;
+      padding: 3px 8px;
+      margin: 0 5px 5px 0;
+      font-size: 10.8px;
+    }
+
+    .metric strong,
+    .module strong,
+    .vision-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--dark);
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 12px 0;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .stack {
+      display: grid;
+      gap: 8px;
+    }
+
+    .highlight {
+      border-left: 4px solid var(--accent);
+      background: #fff9ea;
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+
+    .source-box {
+      border: 1px solid var(--line);
+      background: #ffffff;
+      padding: 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 20px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cover">
+    <div>
+      <div class="logo-row">
+        <img src="landing-page-EntityX/public/imagenes/logo-entityx.png" alt="Logo EntityX" />
+        <div>
+          <div class="brand-name">EntityX</div>
+          <div class="muted" style="color:#d5e9ec;">Documento estratégico y técnico del proyecto</div>
+        </div>
+      </div>
+
+      <h1>Sistema integral en la nube para la gestión de centros deportivos, academias y clubes</h1>
+      <p class="subtitle">
+        EntityX busca convertir la operación diaria de centros deportivos, academias, clubes y otros negocios de inscripción recurrente en un sistema controlado, medible y escalable.
+      </p>
+
+      <div class="cover-grid">
+        <div class="cover-card">
+          <strong>Qué es</strong>
+          <span>Una aplicación web para gestionar miembros, membresías, cobros, accesos, ventas, empleados, reportes y comunicación operativa.</span>
+        </div>
+        <div class="cover-card">
+          <strong>Qué resuelve</strong>
+          <span>Fugas de dinero, desorden administrativo, pagos vencidos, datos dispersos, falta de control del personal y dependencia del papel.</span>
+        </div>
+        <div class="cover-card">
+          <strong>Hacia dónde va</strong>
+          <span>Una plataforma de autogestión para Dueños de negocios, equipos internos y clientes finales, adaptable a distintos rubros.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div>Proyecto: EntityX</div>
+      <div>Fecha del documento: 28 de julio de 2026</div>
+      <div>Autoría del proyecto: Aaron Fabricio Santa Cruz Valdez</div>
+    </div>
+  </div>
+
+  <main>
+    <section>
+      <h2>1. Resumen Ejecutivo</h2>
+      <p class="lead">
+        EntityX es una plataforma de gestión en la nube creada para negocios que administran miembros activos, membresías, accesos, actividades, ventas y personal. Su mercado inicial son gimnasios, centros deportivos, academias y clubes: negocios con movimiento diario, pagos recurrentes, atención en recepción y necesidad constante de controlar quién está al día, qué se vendió y cómo está funcionando la operación.
+      </p>
+      <p>
+        La propuesta es convertir una administración dispersa en una operación clara y medible. EntityX permite centralizar clientes finales, cobros, membresías, accesos, ventas, empleados, reportes y comunicación operativa en un solo sistema, ayudando a los <strong>Dueños de negocios</strong> a reducir pérdidas, mejorar el control interno y ofrecer una experiencia más profesional a sus propios miembros.
+      </p>
+      <div class="highlight">
+        <strong>Idea fuerza:</strong> EntityX busca ser el sistema que ordena la operación de negocios con membresías y servicios recurrentes, empezando por el sector deportivo y formativo, con capacidad de crecer hacia otros rubros que comparten los mismos problemas de control.
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Índice del Documento</h2>
+      <div class="toc">
+        <div><strong>1. Resumen Ejecutivo</strong><span>Definición general y propósito de EntityX.</span></div>
+        <div><strong>2. Índice del Documento</strong><span>Mapa de lectura de la presentación.</span></div>
+        <div><strong>3. Qué es EntityX</strong><span>Descripción del producto y oportunidad de mercado.</span></div>
+        <div><strong>4. Problema que EntityX Planea Solucionar</strong><span>Dolores operativos y financieros del mercado objetivo.</span></div>
+        <div><strong>5. Solución Propuesta</strong><span>Cómo EntityX centraliza la operación diaria.</span></div>
+        <div><strong>6. Usuarios y Roles del Sistema</strong><span>Actores principales y alcance de uso.</span></div>
+        <div><strong>7. Cómo Funciona</strong><span>Áreas principales de operación y valor para el negocio.</span></div>
+        <div><strong>8. Flujo de Uso Principal</strong><span>Proceso de activación y operación diaria.</span></div>
+        <div><strong>9. Modelo de Negocio y Rentabilidad</strong><span>Suscripción, escalado y oportunidad económica.</span></div>
+        <div><strong>10. Programa de Afiliados y Aliados Comerciales</strong><span>Vendedores, prospectos, comisiones y expansión.</span></div>
+        <div><strong>11. Diferenciadores de EntityX</strong><span>Ventajas frente a sistemas rígidos o manuales.</span></div>
+        <div><strong>12. Visión de Evolución</strong><span>Crecimiento hacia autogestión y operación más conectada.</span></div>
+        <div><strong>13. Resultado que se Quiere Lograr</strong><span>Impacto esperado para Dueños de negocios, socios y marca.</span></div>
+        <div><strong>14. Conclusión</strong><span>Cierre estratégico de la propuesta.</span></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>3. Qué es EntityX</h2>
+      <p>
+        EntityX es un software de gestión empresarial en la nube que permite administrar negocios físicos desde un entorno digital. Para los <strong>Dueños de negocios</strong>, esto significa tener un punto central donde se controla la información de sus miembros, sus pagos, sus planes, sus actividades, sus ventas y su personal.
+      </p>
+      <p>
+        Para un socio comercial, EntityX representa un producto con una necesidad clara en el mercado: muchos negocios ya tienen miembros activos, cobran todos los días y venden servicios adicionales, pero siguen administrando con cuadernos, hojas de cálculo o mensajes sueltos. EntityX entra en ese punto de dolor con una solución práctica, entendible y vendible.
+      </p>
+      <div class="three-col">
+        <div class="metric">
+          <strong>Servicio en la nube</strong>
+          <span>Los <strong>Dueños de negocios</strong> acceden desde la web y no necesitan instalar ni mantener infraestructura propia.</span>
+        </div>
+        <div class="metric">
+          <strong>Control por negocio</strong>
+          <span>Cada negocio administra sus propios miembros, empleados, ventas, membresías y reportes.</span>
+        </div>
+        <div class="metric">
+          <strong>Adaptable por rubro</strong>
+          <span>La solución puede crecer hacia academias, clubes, spas, escuelas deportivas, espacios compartidos y otros rubros.</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Problema que EntityX Planea Solucionar</h2>
+      <p>
+        Muchos negocios basados en membresías crecen más rápido que su administración. Empiezan con cuadernos, Excel, mensajes de WhatsApp y memoria del personal. Ese método puede funcionar con pocos miembros, pero se rompe cuando aumentan las inscripciones, los pagos, los horarios, los productos vendidos y la cantidad de empleados.
+      </p>
+      <table class="problem-solution">
+        <thead>
+          <tr>
+            <th>Problema operativo</th>
+            <th>Impacto en el negocio</th>
+            <th>Respuesta de EntityX</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Miembros con mensualidad vencida siguen ingresando.</td>
+            <td>Pérdida directa de ingresos y dependencia del criterio de recepción.</td>
+            <td>Verificación de vigencia, estado de cuenta y control de acceso basado en membresía activa.</td>
+          </tr>
+          <tr>
+            <td>Ventas de agua, snacks, suplementos o servicios extra no se registran.</td>
+            <td>Descuadres de caja, falta de trazabilidad y dificultad para medir rentabilidad.</td>
+            <td>Módulo de ventas para registrar ingresos no recurrentes y generar reportes.</td>
+          </tr>
+          <tr>
+            <td>Datos de miembros dispersos en papel, planillas o chats.</td>
+            <td>No existe una base confiable para seguimiento, cobranza o decisiones.</td>
+            <td>Base centralizada de miembros con datos personales, membresía, fechas, asistencia y pagos.</td>
+          </tr>
+          <tr>
+            <td>Recepción responde consultas repetitivas sobre vencimientos, clases y horarios.</td>
+            <td>El personal operativo pierde tiempo en tareas administrativas de bajo valor.</td>
+            <td>Portal del cliente final y cartelera digital para consultar vigencias, consumos, horarios y anuncios.</td>
+          </tr>
+          <tr>
+            <td>No hay control claro de empleados, roles, permisos y pagos al personal.</td>
+            <td>Riesgo de accesos indebidos, falta de historial laboral y egresos poco transparentes.</td>
+            <td>Roles, permisos, asistencia de empleados, pagos a empleados y separación de accesos por perfil.</td>
+          </tr>
+          <tr>
+            <td>El <strong>Dueño de negocio</strong> no sabe con precisión cuánto ingresó, qué se vendió o qué miembros están activos.</td>
+            <td>Las decisiones se toman tarde o con información incompleta.</td>
+            <td>Paneles de control, reportes PDF e indicadores de ingresos, miembros, ventas y crecimiento.</td>
+          </tr>
+          <tr>
+            <td>Los softwares existentes suelen ser rígidos o pensados para un solo nicho.</td>
+            <td>El negocio debe adaptarse al software, no el software al negocio.</td>
+            <td>Rubros, servicios activables, membresías configurables y estructura adaptable por tipo de negocio.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="page-break">
+      <h2>5. Solución Propuesta</h2>
+      <p>
+        EntityX propone una operación digital centralizada: cada cobro queda registrado, cada usuario trabaja con su propio acceso, cada miembro tiene un estado claro y cada <strong>Dueño de negocio</strong> puede controlar su negocio sin depender de información dispersa.
+      </p>
+      <div class="two-col">
+        <div>
+          <h3>Para los <strong>Dueños de negocios</strong></h3>
+          <ul>
+            <li>Administración de una o varias entidades desde una cuenta.</li>
+            <li>Control de miembros activos y límites según el plan contratado.</li>
+            <li>Creación de membresías con precios, duración y condiciones propias.</li>
+            <li>Reportes de pagos, ventas, asistencia y rendimiento operativo.</li>
+            <li>Gestión de empleados y permisos sin exponer información sensible.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Para la operación diaria</h3>
+          <ul>
+            <li>Registro de miembros, renovaciones y pagos desde recepción.</li>
+            <li>Control de accesos y validación de membresías vigentes.</li>
+            <li>Registro de ventas extra y servicios complementarios.</li>
+            <li>Cartelera de actividades, anuncios y comunicación interna.</li>
+            <li>Portal para que el cliente final consulte su información sin depender de recepción.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <p>
+        El valor no está solo en digitalizar datos, sino en convertirlos en control operativo. Un negocio que conoce sus miembros activos, sus pagos pendientes, sus ingresos diarios y la actividad de su personal puede tomar mejores decisiones, reducir pérdidas y crecer con mayor orden.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. Usuarios y Roles del Sistema</h2>
+      <p>
+        EntityX está pensado para que cada persona del negocio use el sistema según su responsabilidad. Esto reduce errores, protege información sensible y permite que la operación crezca sin que todos tengan acceso a todo.
+      </p>
+      <div class="stack">
+        <div class="module"><strong>Equipo de EntityX</strong>Administra la plataforma, planes, activaciones y control general del servicio.</div>
+        <div class="module"><strong>Dueño de negocio o administrador</strong>Gestiona miembros, membresías, empleados, ventas, actividades, pagos, anuncios y reportes de su operación.</div>
+        <div class="module"><strong>Recepción</strong>Registra miembros, valida información, cobra, asigna membresías, controla accesos y registra ventas del día.</div>
+        <div class="module"><strong>Cliente final del negocio</strong>Consulta información de su plan, vigencia, estado de cuenta, consumos, horarios, anuncios y beneficios disponibles.</div>
+        <div class="module"><strong>Personal especializado</strong>Entrenadores, instructores o personal técnico pueden evolucionar hacia tareas de seguimiento, clases, actividades y atención personalizada.</div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>7. Cómo Funciona</h2>
+      <p>
+        EntityX se organiza alrededor de dos necesidades: permitir que la plataforma atienda a distintos rubros y permitir que cada negocio opere su día a día con claridad. Esta estructura facilita ofrecer el sistema a diferentes tipos de negocio sin perder control sobre la información de cada operación.
+      </p>
+      <h3>Gestión de plataforma y crecimiento</h3>
+      <div class="three-col">
+        <div class="module"><strong>Dueños de negocios</strong>Personas o empresas que contratan EntityX para administrar una o varias sedes.</div>
+        <div class="module"><strong>Sedes o entidades</strong>Unidades operativas donde ocurre la atención diaria: gimnasio, academia, club o centro deportivo.</div>
+        <div class="module"><strong>Planes comerciales</strong>Niveles de suscripción pensados para crecer según la cantidad de miembros activos.</div>
+        <div class="module"><strong>Rubros de mercado</strong>Segmentos donde la solución puede venderse: deporte, formación, bienestar, clubes y otros negocios recurrentes.</div>
+        <div class="module"><strong>Servicios activables</strong>Funciones que permiten adaptar la experiencia a lo que cada negocio realmente necesita.</div>
+        <div class="module"><strong>Configuración por sede</strong>Ajustes que permiten que cada negocio trabaje con su propia operación, datos y necesidades.</div>
+      </div>
+      <h3>Operación diaria del negocio</h3>
+      <div class="three-col">
+        <div class="module"><strong>Miembros</strong>Base de clientes finales con datos personales, contacto, membresía, fechas y actividad.</div>
+        <div class="module"><strong>Membresías</strong>Planes internos del negocio con duración, precio, condiciones y beneficios.</div>
+        <div class="module"><strong>Pagos</strong>Historial administrativo para controlar cobros, deudas, renovaciones y movimientos importantes.</div>
+        <div class="module"><strong>Ventas</strong>Ingresos adicionales por productos, pases, servicios extra o consumos.</div>
+        <div class="module"><strong>Empleados</strong>Personal operativo con asistencia, responsabilidades y control de pagos.</div>
+        <div class="module"><strong>Reportes</strong>Información lista para revisar, descargar y usar en decisiones administrativas.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>8. Flujo de Uso Principal</h2>
+      <p>
+        El flujo para un nuevo <strong>Dueño de negocio</strong> está pensado para ser simple: se registra el negocio, se define su plan, se configura su información principal y se habilita el acceso para que empiece a operar. A partir de ahí, el <strong>Dueño de negocio</strong> o administrador puede cargar membresías, miembros, empleados, actividades y ventas.
+      </p>
+      <div class="two-col">
+        <div>
+          <h3>Alta y configuración</h3>
+          <ul>
+            <li>Se registra el negocio y se define el plan adecuado.</li>
+            <li>Se cargan datos comerciales, rubro y configuración inicial.</li>
+            <li>El administrador recibe acceso para empezar a operar.</li>
+            <li>Se crean membresías, servicios, empleados y actividades.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Operación diaria</h3>
+          <ul>
+            <li>Recepción registra miembros y asigna membresías.</li>
+            <li>Los pagos se registran en efectivo, QR u otros métodos administrativos.</li>
+            <li>La entidad controla vencimientos, accesos, asistencia y ventas.</li>
+            <li>El <strong>Dueño de negocio</strong> consulta reportes e indicadores para tomar decisiones.</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        En su etapa actual, EntityX se enfoca en registrar y controlar administrativamente pagos realizados por medios habituales del negocio, como efectivo o QR. Esto permite validar el mercado con una propuesta clara: control, historial y reportes sin obligar a los <strong>Dueños de negocios</strong> a cambiar inmediatamente su forma de cobrar.
+      </p>
+    </section>
+
+    <section class="page-break">
+      <h2>9. Modelo de Negocio y Rentabilidad</h2>
+      <p>
+        EntityX está diseñado como un servicio de suscripción. Su modelo comercial puede crecer según la cantidad de miembros activos del negocio, no solamente por cantidad histórica de registros. Esta decisión alinea el precio con el valor operativo real que reciben los <strong>Dueños de negocios</strong>: mientras más miembros vigentes tienen, mayor es el uso y mayor es el impacto del sistema.
+      </p>
+      <div class="three-col">
+        <div class="metric"><strong>Ingresos recurrentes</strong><span>Suscripciones mensuales o anuales por uso de la plataforma.</span></div>
+        <div class="metric"><strong>Escalado por miembros activos</strong><span>El límite principal está asociado a miembros vigentes, no al historial.</span></div>
+        <div class="metric"><strong>Costos controlados</strong><span>Al operar en la nube, una misma base tecnológica atiende a múltiples entidades.</span></div>
+      </div>
+      <h3>Planes y propuesta comercial</h3>
+      <p>
+        La propuesta comercial apunta a entregar una experiencia completa y cobrar principalmente según la capacidad de uso. Esto reduce fricción de venta: el negocio no necesita entender una matriz compleja de funciones bloqueadas, sino elegir un nivel de acuerdo con su cantidad de miembros activos.
+      </p>
+    </section>
+
+    <section>
+      <h2>10. Programa de Afiliados y Aliados Comerciales</h2>
+      <p>
+        EntityX no depende únicamente de venta directa. El proyecto contempla un programa de aliados para personas que quieran unirse al equipo comercial, recomendar el sistema y generar ingresos ayudando a negocios a digitalizar su operación. Esta línea es importante porque el mercado objetivo está distribuido en muchos nichos locales: gimnasios, academias, clubes, centros de bienestar y espacios similares.
+      </p>
+      <div class="two-col">
+        <div>
+          <h3>Qué ofrece al aliado</h3>
+          <ul>
+            <li>Capacitación para entender el sistema y explicar su valor con claridad.</li>
+            <li>Un panel propio para revisar su actividad, prospectos, entidades vinculadas y pagos pendientes.</li>
+            <li>Comisiones transparentes asociadas a negocios que ingresan por su gestión comercial.</li>
+            <li>Control de cartera para dar seguimiento a negocios activos, oportunidades e interesados.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Por qué es atractivo</h3>
+          <ul>
+            <li>Permite vender una solución con dolor claro: desorden administrativo, cartera vencida y fugas de dinero.</li>
+            <li>El aliado puede enfocarse en nichos que ya conoce y donde tiene contactos reales.</li>
+            <li>El modelo ayuda a EntityX a crecer con menor costo fijo y mayor presencia local.</li>
+            <li>Los <strong>Dueños de negocios</strong> reciben acompañamiento comercial más cercano durante la adopción del sistema.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight">
+        <strong>Valor para socios:</strong> el programa de aliados convierte a EntityX en una oportunidad comercial escalable. No solo se vende software; se crea una red de asesores que entienden los problemas del negocio local y pueden llevar una solución concreta a mercados donde la venta presencial y la confianza siguen pesando mucho.
+      </div>
+    </section>
+
+    <section>
+      <h2>11. Diferenciadores de EntityX</h2>
+      <div class="stack">
+        <div class="module"><strong>Modularidad real</strong>El sistema no obliga a todos los negocios a operar igual. Sus servicios activables permiten usar solo lo necesario y mantener una experiencia simple para el equipo.</div>
+        <div class="module"><strong>Adaptación por rubro</strong>El rubro permite ajustar lenguaje, configuración y servicios a diferentes tipos de negocio sin crear un producto aislado por cada nicho.</div>
+        <div class="module"><strong>Gestión de varias sedes</strong>Permite que un Dueño de negocio administre varias entidades, habilitando operaciones con más de una sucursal desde el diseño base.</div>
+        <div class="module"><strong>Control financiero operativo</strong>Pagos, ventas, reportes, vencimientos y registros históricos reducen pérdidas por anotaciones informales.</div>
+        <div class="module"><strong>Seguridad por rol</strong>La separación entre equipo de EntityX, administrador del negocio, recepción, personal especializado y cliente final evita exponer funciones críticas a usuarios operativos.</div>
+        <div class="module"><strong>Portal de autogestión</strong>El cliente final deja de depender de recepción para consultar información básica, reduciendo carga operativa.</div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <h2>12. Visión de Evolución</h2>
+      <p>
+        La evolución natural de EntityX es pasar de una plataforma administrativa a una operación más conectada, donde cada actor gestiona su parte del negocio desde su propio panel. La meta es que los <strong>Dueños de negocios</strong> tengan más control, el equipo trabaje con mayor claridad y el cliente final dependa menos de recepción para resolver consultas simples.
+      </p>
+      <div class="stack">
+        <div class="vision-item">
+          <strong>Entrenador de sala</strong>
+          Evolución del rol técnico hacia seguimiento de miembros, registro de progreso, control de asistencia específica y apoyo personalizado según la membresía contratada.
+        </div>
+        <div class="vision-item">
+          <strong>Instructor de clases</strong>
+          Gestión más completa de actividades, horarios, asistencia por clase, anuncios y coordinación con los miembros inscritos o interesados.
+        </div>
+        <div class="vision-item">
+          <strong>Cliente con autogestión</strong>
+          Consulta de vigencia, estado de cuenta, consumos, horarios, anuncios y, a futuro, acciones directas que reduzcan filas y consultas repetitivas en recepción.
+        </div>
+      </div>
+      <p>
+        Esta visión amplía el impacto económico del producto: los <strong>Dueños de negocios</strong> reducen fricción en recepción, el empleado obtiene herramientas profesionales, el cliente final gana autonomía y EntityX aumenta recurrencia, retención y volumen de datos útiles para decisiones.
+      </p>
+    </section>
+
+    <section>
+      <h2>13. Resultado que se Quiere Lograr</h2>
+      <p>
+        El objetivo de EntityX es convertirse en una plataforma de referencia para digitalizar negocios físicos de membresía y servicios recurrentes en mercados locales, empezando por centros deportivos y expandiéndose hacia otros rubros. El resultado esperado no es solamente vender software, sino instalar una forma más controlada, medible y profesional de operar.
+      </p>
+      <div class="two-col">
+        <div>
+          <h3>Resultado para los <strong>Dueños de negocios</strong></h3>
+          <ul>
+            <li>Menos pérdida de dinero por pagos vencidos o no registrados.</li>
+            <li>Menos dependencia de cuadernos, planillas y mensajes sueltos.</li>
+            <li>Mayor control sobre miembros, empleados, ventas y accesos.</li>
+            <li>Mejor toma de decisiones mediante reportes e indicadores.</li>
+            <li>Imagen más profesional frente a sus propios clientes finales.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Resultado para EntityX</h3>
+          <ul>
+            <li>Ingresos recurrentes propios de un servicio en la nube.</li>
+            <li>Producto escalable a múltiples rubros sin rehacer el núcleo.</li>
+            <li>Modelo comercial preparado para crecer mediante suscripción y capacidad de uso.</li>
+            <li>Base tecnológica capaz de crecer hacia pagos, reservas, tienda y autoservicio.</li>
+            <li>Marca posicionada como solución modular, flexible y accesible.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>14. Conclusión</h2>
+      <p>
+        EntityX busca resolver un problema concreto: negocios que generan ingresos recurrentes pero administran su operación con herramientas frágiles. La plataforma combina control de membresías, miembros, accesos, ventas, empleados, pagos y reportes en una sola experiencia, con una arquitectura preparada para más de un rubro y más de una sucursal.
+      </p>
+      <p>
+        Su mayor valor estratégico está en la flexibilidad: EntityX puede iniciar en gimnasios y centros deportivos, pero su núcleo de <strong>Dueños de negocios</strong>, entidades, rubros, planes, servicios activables, roles y reportes permite evolucionar hacia una plataforma para distintos nichos. Si se ejecuta con foco, el proyecto puede convertirse en una infraestructura comercial para digitalizar operaciones pequeñas y medianas que hoy pierden dinero, tiempo y control por falta de sistemas adecuados.
+      </p>
+    </section>
+
+    <footer>
+      EntityX - Documento de presentación para posibles socios y Dueños de negocios interesados.
+    </footer>
+  </main>
+</body>
+</html>
